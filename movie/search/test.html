@@ -1,0 +1,32 @@
+<head>
+	<script>
+		function search()
+		{	alert("method called!!");
+			var req=new XMLHttpRequest();
+			var par;
+			var url="data.html";
+			try
+			{
+				par="name="+search_form.text.value;
+				req.onreadystatechange=function get_list()
+										{
+											if(req.readyState==4)
+											{
+												alert("done!!");
+											}
+										}
+				req.open("POST",url,false);		
+				req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				req.setRequestHeader("Content-length", par.length);	
+				req.send(par);
+			}
+			catch(e)
+			{
+				alert(e);
+			}
+		}		
+	</script>
+</head>
+<form name="search_form">
+<input name="text" type=text oninput="search()">
+</form>

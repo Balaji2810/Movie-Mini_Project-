@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container " style="padding-top:100px">
+<div class="row">
+
+{%for i in movies%}
+
+<div class ='col mb-3'>
+<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src='{{i[-1]}}' alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text"><a href='/movie/{{i[0]}}'>{{i[0].replace('_',' ')}}</a></p>
+  </div>
+</div>
+</div>
+{%endfor%}
+
+
+
+ </div>
+ </div>
+{% endblock %}
+
+
+
+ 

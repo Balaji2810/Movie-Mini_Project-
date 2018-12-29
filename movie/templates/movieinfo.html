@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<div style='background-color:rgba(0,0,0,1); '>
+   <div class='container-fluid' style="padding-top:100px;padding-left:30px;padding-right:30px;padding-bottom:50px">
+    
+
+<div class=row>
+ 
+<div class=col-lg-8>
+<div class=jumbotron >
+<h1 class="h1">{{list[0]}}</h1>
+<h2 class="h2">Genre</h2>
+<ul >
+
+{%for i in list[3]%}
+<li>{{i}}</li>
+{%endfor%}
+</ul>
+<h2>Plot</h2>
+{{list[2]|safe}}
+</div>
+</div>
+
+
+<div class=col-lg-4>
+<div class=jumbotron '>
+<center>
+<img src='{{list[1]}}' width='220px' height='326'>
+<br>
+<br>
+{%for i in list[4]%}
+<h3>{{i}}<h3>
+{%endfor%}
+
+<a href="similar/{{'$'.join(list[3])}}"><button class='btn btn-outline-success btn-block'>Similar Movies</button></a>
+<br>
+<br>
+<button class='btn btn-outline-success btn-block'>Similar Movies in same Language</button>
+</center>
+</div>
+</div>
+</div>
+</div>
+
+
+  
+
+{% endblock %}
