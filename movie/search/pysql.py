@@ -23,7 +23,7 @@ for i in a:
 	l=list(map(str,m.split()))
 	name=l[0].replace('_',' ')
 	print(k,name)	
-	#mycursor.execute('insert into movies values(\''+name+'\');')
+	
 	print('insert into movies values(\''+name+'\')')
 	sql = "INSERT INTO movies (name) VALUES (%(name)s)"
 	val = {"name":name}

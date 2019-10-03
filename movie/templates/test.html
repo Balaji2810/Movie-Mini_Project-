@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	 <script>
+	 j=0;
+	 function add(){
+	 for(i=j;i<(j+10);i++){
+	 if(i==17)
+	 break;
+	 var dv = document.createElement('div');
+	 dv.innerHTML='<div class ="col mb-3"><div class="card" style="width: 10rem;"><img class="card-img-top" src="//upload.wikimedia.org/wikipedia/en/8/83/Dark_knight_rises_poster.jpg" alt="Card image cap"><div class="card-body">  <p class="card-text"><a href="/movie/The_Dark_Knight_Rises">The Dark Knight Rises</a></p></div></div></div>'
+	 document.getElementById("row").appendChild(dv);
+	 }
+	 j=i;
+	 }
+	 
+	 
+	 function test()
+	 {
+	  var v={{name|safe}}
+	  alert(v[-1]);
+	 }
+	 
+	 </script>
+
+</head>
+<body onload="test()">
+
+<center>
+<button onclick="add()">Add</button>
+</center>	
+	<div class="row" id="row">
+
+
+
+
+
+
+
+
+ </div>
+	
+	
+
+	
+	
+	
+	
+</body>
+</html>

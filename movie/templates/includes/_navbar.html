@@ -136,14 +136,23 @@
       
     </ul>
     <div class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" list="data" type="search" placeholder="Search" aria-label="Search" oninput="search()" name="searchbox" onfocusout="clear()">
+      <input class="form-control mr-sm-2" list="data" type="search" placeholder="Search" aria-label="Search" oninput="search()" id="textbox" name="searchbox" onfocusout="clear()">
 	  <datalist id="data"></datalist>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" onclick="gopage()">Search</button>
     </div>
   </div>
 </nav>
 
 <script>
+		function gopage()
+		{
+		 name=document.getElementById("textbox").value
+		 name=name.replace(/ /g,'_')
+		 location.replace("/movie/"+name+"/")
+		 
+		}
+		
+
 		function search()
 		{	
 			
@@ -156,7 +165,7 @@
 			}
 		
 		
-		//alert("method called!!");
+		
 			var req=new XMLHttpRequest();
 			var url="/searchbox/"+document.getElementsByName('searchbox')[0].value;
 			//alert("URL "+url);

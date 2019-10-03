@@ -1,25 +1,51 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-<div class="container " style="padding-top:100px">
-<div class="row">
 
-{%for i in movies%}
+<script>
+j=0;
+movies={{movies|safe}};
+lmt=movies.length;
+	 function add(){
+	 //alert(movies);
+	 for(i=j;i<(j+54);i++){
+	 if(i==lmt)
+	 {
+	 document.getElementById("more").setAttribute("hidden", true);
+	 break;
+	 }
+	 movie=movies[i];
+	 l=movie.length;
+	 img=movie[l-1];
+	 href=movie[0];
+	 name=movie[0].replace(/_/g,' ');
+	 var dv = document.createElement('div');
+	 dv.innerHTML='<div class ="col mb-3"><div class="card" style="width: 10rem;height:350px;"><a href="/movie/'+href+'"><img class="card-img-top" src="'+img+'" alt="Card image cap"></a><div class="card-body">  <p class="card-text"><a href="/movie/'+href+'">'+name+'</a></p></div></div></div>'
+	 document.getElementById("row").appendChild(dv);
+	 
+	 }
+	 
+	 j=i;
+	 }
 
-<div class ='col mb-3'>
-<div class="card" style="width: 10rem;">
-  <img class="card-img-top" src='{{i[-1]}}' alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text"><a href='/movie/{{i[0]}}'>{{i[0].replace('_',' ')}}</a></p>
-  </div>
-</div>
-</div>
-{%endfor%}
+	
+
+</script>
+<div class="container " style="padding-top:100px" >
+<div class="row" id="row">
+
+
 
 
 
  </div>
+ 
+ <center>
+ <button id="more" type="button" onclick="add()"class="btn btn-outline-dark">More</button>
+ <center>
+ <br><br><br><br>
  </div>
+ 
 {% endblock %}
 
 

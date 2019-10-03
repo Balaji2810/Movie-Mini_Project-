@@ -11,7 +11,7 @@
  
 <div class=col-lg-8>
 <div class=jumbotron >
-<h1 class="h1">{{list[0]}}</h1>
+<h1 class="h1">{{list[0].replace('_',' ')}}</h1>
 <h2 class="h2">Genre</h2>
 <ul >
 
@@ -35,10 +35,10 @@
 <h3>{{i}}<h3>
 {%endfor%}
 
-<a href="similar/{{'$'.join(list[3])}}"><button class='btn btn-outline-success btn-block'>Similar Movies</button></a>
+<a href="similar/"><button class='btn btn-outline-success btn-block'>Similar Movies</button></a>
 <br>
 <br>
-<button class='btn btn-outline-success btn-block'>Similar Movies in same Language</button>
+
 </center>
 </div>
 </div>
